@@ -1,5 +1,6 @@
 ## Clone do Spotify 🎵
 
+![image](https://user-images.githubusercontent.com/92322675/170549985-2fbede7e-4fe9-4a43-b2fb-540f9f2a080a.png)
 
 
 ## 💻 Projeto
