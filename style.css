@@ -9,6 +9,9 @@
   --light-green: #1ed760;
 
   --navbar-color: rgba(0, 0, 0, 1);
+
+  --text-bright-accent: #1ed760;
+  --text-base: #2941ab;
 }
 
 body {
@@ -18,8 +21,8 @@ body {
 /***** UTILITY CLASSES *****/
 
 .btn-primary {
-  background: var(--default-green);
-  color: white;
+  background: var(--text-bright-accent, #117a37);
+  color: var(--text-base);
   text-transform: uppercase;
   padding: 15px 60px;
   border: none;
@@ -29,8 +32,13 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--light-green);
+  background: var(--default-green);
   cursor: pointer;
+}
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 /***** NAVBAR *****/
@@ -44,11 +52,11 @@ body {
 
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
 }
 
 #navbar .navbar-container {
-  width: 60%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,7 +87,12 @@ body {
 }
 
 #navbar .navbar-container ul li:nth-child(3) {
-  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+#navbar .navbar-container ul li:nth-child(4),
+#navbar .navbar-container ul li:nth-child(5) {
+  color: #d9dadc;
 }
 
 /***** SHOWCASE *****/
@@ -91,8 +104,8 @@ body {
   align-items: center;
 
   color: white;
-  background: url('./assets/showcase.webp') center center/cover;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: url('./assets/girl_dancing.jpg') center center/cover;
+  background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: color; /* utilizado para dar uma escurecida no background */
 }
 
@@ -100,15 +113,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #showcase .showcase-container h2 {
-  font-size: 5rem;
+  width: 800px;
+  font-size: 120px;
+  line-height: 166px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  color: var(--text-bright-accent, #117a37);
+  text-align: center;
 }
 
 #showcase .showcase-container p {
   margin: 15px 0;
   font-size: 1.1rem;
+
+  color: var(--text-bright-accent, #117a37);
 }
 
 /***** FOOTER *****/
@@ -126,7 +148,7 @@ body {
 
 #footer .footer-content {
   display: flex;
-  width: 60%;
+  width: 80%;
   margin: auto;
   justify-content: space-between;
 }
@@ -154,3 +176,72 @@ body {
 }
 
 /***** FOOTER SOCIALS *****/
+
+.socials {
+  display: flex;
+}
+
+.socials i {
+  margin: 0 20px;
+  font-size: 1.7rem;
+  transition: all 300ms ease;
+}
+
+.socials i:hover {
+  color: var(--default-green);
+  cursor: pointer;
+}
+
+/***** FOOTER INFO *****/
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  width: 80%;
+  margin: auto;
+  font-weight: bold;
+
+  color: #919496;
+  font-size: 0.75rem;
+  padding-top: 50px;
+}
+
+.footer-info .footer-info-items {
+  display: flex;
+  list-style: none;
+}
+
+.footer-info .footer-info-items .footer-info-item {
+  margin: 0 10px;
+  transition: all 300ms ease;
+}
+
+.footer-info .footer-info-items .footer-info-item:hover {
+  color: var(--default-green);
+  cursor: pointer;
+}
+
+.footer-info .rights .country {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-info .rights .country p {
+  transition: all 300ms ease;
+}
+
+.footer-info .rights .country p:hover {
+  color: var(--default-green);
+  cursor: pointer;
+}
+
+.footer-info .rights .country .brazil-flag {
+  height: 20px;
+  width: auto;
+  display: inline-block;
+  margin-left: 10px;
+}
